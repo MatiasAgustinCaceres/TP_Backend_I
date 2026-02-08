@@ -23,7 +23,7 @@ class ProductManager {
         const products = await this.getProducts();
 
         const newProduct = {
-            id: Date.now().toString(), // id autogenerado
+            id: Date.now().toString(),
             status: true,
             ...product
         };
@@ -48,7 +48,7 @@ class ProductManager {
         products[index] = {
             ...products[index],
             ...updatedFields,
-            id: products[index].id // el id no se modifica
+            id: products[index].id
         };
 
         await fs.promises.writeFile(
